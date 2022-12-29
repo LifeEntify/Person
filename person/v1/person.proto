@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package person.v1;
+
+option go_package="github.com/lifeentify/person;person";
+
+message Person {
+  string _id = 1;
+  string account_id = 2;
+  string hospital_id = 3;
+  Profile profile = 4;
+  repeated Credential credential = 5;
+  bool staff_id = 6;
+}
+message Profile {
+  string last_name = 1;
+  string first_name = 2;
+  string phone_number = 3;
+  string national_identity = 4;
+  Address address = 5;
+}
+message Credential {
+  string password = 1;
+  string token = 2;
+  string category = 3;
+}
+message Address {
+  string street = 1;
+  string town = 2;
+  string lga = 3;
+  string state = 4;
+  string country = 5;
+}
